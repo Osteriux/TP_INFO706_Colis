@@ -3,6 +3,8 @@ package fr.xavier_maziere.jee;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.transaction.Transactional;
 import jakarta.websocket.server.PathParam;
 import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
@@ -12,9 +14,9 @@ import jakarta.ws.rs.Path;
 @Path("colis")
 public interface Operation {
     @GET
-    @Produces(MediaType.APPLICATION_JSON)   
-    Colis creeColis(@QueryParam("id") long id,
-                    @QueryParam("poids") float poids,
+    @Produces(MediaType.APPLICATION_JSON)
+    @Transactional 
+    Colis creeColis(@QueryParam("poids") float poids,
                     @QueryParam("dest") String destination,
                     @QueryParam("orig") String origine,
                     @QueryParam("val") float valeur,

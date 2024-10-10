@@ -1,12 +1,15 @@
 package fr.xavier_maziere.jee;
 import java.io.Serializable;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Version;
 
 @Entity
 public class Colis implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Version
 	private long version;
@@ -91,9 +94,8 @@ public class Colis implements Serializable {
         super();
     }
 
-    public Colis(long id, float poids, String destination, String origine, float valeur, double longitude, double latitude, String emplacement, String etat) {
+    public Colis(float poids, String destination, String origine, float valeur, double longitude, double latitude, String emplacement, String etat) {
         super();
-        this.id = id;
         this.poids = poids;
         this.destination = destination;
         this.origine = origine;

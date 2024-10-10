@@ -3,13 +3,13 @@ package fr.xavier_maziere.jee;
 import jakarta.ejb.Remote;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceUnit;
+import jakarta.persistence.PersistenceContext;
 
 @Stateless
 @Remote
 public class OperationBean implements Operation {
 
-    @PersistenceUnit(unitName = "colis")
+    @PersistenceContext(unitName = "colis")
     private EntityManager em;
 
     public OperationBean() {
@@ -17,8 +17,8 @@ public class OperationBean implements Operation {
     }
 
     @Override
-    public Colis creeColis(long id, float poids, String destination, String origine, float valeur, double longitude, double latitude) {
-        Colis colis = new Colis(id, poids, destination, origine, valeur, longitude, latitude, origine, Colis.EN_COURS);
+    public Colis creeColis(float poids, String destination, String origine, float valeur, double longitude, double latitude) {
+        Colis colis = new Colis(poids, destination, origine, valeur, longitude, latitude, origine, Colis.EN_COURS);
         em.persist(colis);
         return colis;
     }
