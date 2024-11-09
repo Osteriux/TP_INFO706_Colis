@@ -6,18 +6,17 @@
     <parent>
           <groupId>fr.xavier_maziere.jee</groupId>
           <artifactId>tp_info706</artifactId>
-          <version>1.0-SNAPSHOT</version>
+          <version>1</version>
     </parent>
 
     <groupId>fr.xavier_maziere.jee</groupId>
     <artifactId>colis-web</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1</version>
     <packaging>war</packaging>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <revision>1.0-SNAPSHOT</revision>
     </properties>
 
     <dependencies>
@@ -30,7 +29,7 @@
         <dependency>
             <groupId>fr.xavier_maziere.jee</groupId>
             <artifactId>colis-ejb</artifactId>
-            <version>${revision}</version>
+            <version>1</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

@@ -3,7 +3,6 @@ package fr.xavier_maziere.jee;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
-import jakarta.persistence.GeneratedValue;
 import jakarta.transaction.Transactional;
 import jakarta.websocket.server.PathParam;
 import jakarta.ws.rs.DELETE;
