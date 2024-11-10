@@ -40,7 +40,7 @@ public class OperationBean implements Operation {
         Colis colis = getColis(id);
         colis.setLongitude(longitude);
         colis.setLatitude(latitude);
-        colis.setEmplacement(emplacement);
+        colis.addEmplacement(emplacement);
         colis.setEtat(etat);
         return colis;
     }

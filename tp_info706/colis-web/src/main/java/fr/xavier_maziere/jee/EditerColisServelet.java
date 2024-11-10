@@ -43,8 +43,7 @@ public class EditerColisServelet extends HttpServlet {
 
         Colis colis = ejb.updatePositionColis(id, longitude, latitude, emplacement, etat);
 
-        request.setAttribute("colis", colis);
-        request.getRequestDispatcher("/afficherColis.jsp").forward(request, response);
+        response.sendRedirect(request.getContextPath() + "/afficherColis?id=" + colis.getId());
     }
 
 }

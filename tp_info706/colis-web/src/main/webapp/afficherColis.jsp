@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,10 +26,15 @@
             <p>valeur : ${colis.valeur }&euro;</p>
         </div>
         <div>
-            <p>emplacement : ${colis.emplacement }</p>
+            <p>etat : ${colis.etat }</p>
             <p>longitute : ${colis.longitude }</p>
             <p>latitude : ${colis.latitude }</p>
-            <p>etat : ${colis.etat }</p>
+            <p>emplacement :</p>
+            <ul>
+                <c:forEach var="emp" items="${colis.emplacement}">
+                    <li>${emp }</li>
+                </c:forEach>
+            </ul>
         </div>
     </div>
 </body>

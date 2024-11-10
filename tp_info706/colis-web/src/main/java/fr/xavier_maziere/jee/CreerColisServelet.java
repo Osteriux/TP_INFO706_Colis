@@ -40,8 +40,7 @@ public class CreerColisServelet extends HttpServlet{
 
         // response.getWriter().println("Colis cree : " + colis.getId());
 
-        request.setAttribute("colis", colis);
-        request.getRequestDispatcher("/afficherColis.jsp").forward(request, response);
+        response.sendRedirect(request.getContextPath() + "/afficherColis?id=" + colis.getId());
     }
 
     @Override

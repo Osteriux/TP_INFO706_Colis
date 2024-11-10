@@ -1,5 +1,7 @@
 package fr.xavier_maziere.jee;
 import java.io.Serializable;
+import java.util.ArrayList;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,7 +22,7 @@ public class Colis implements Serializable {
 
     private double longitude;
     private double latitude;
-    private String emplacement;
+    private ArrayList<String> emplacement;
     private String etat;
 
     public static final String EN_COURS = "EN_COURS";
@@ -77,11 +79,11 @@ public class Colis implements Serializable {
     public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
-    public String getEmplacement() {
+    public ArrayList<String> getEmplacement() {
         return emplacement;
     }
-    public void setEmplacement(String emplacement) {
-        this.emplacement = emplacement;
+    public void addEmplacement(String emplacement) {
+        this.emplacement.add(emplacement);
     }
     public String getEtat() {
         return etat;
@@ -102,7 +104,8 @@ public class Colis implements Serializable {
         this.valeur = valeur;
         this.longitude = longitude;
         this.latitude = latitude;
-        this.emplacement = emplacement;
+        this.emplacement = new ArrayList<String>();
+        this.emplacement.add(emplacement);
         this.etat = etat;
     }
 }

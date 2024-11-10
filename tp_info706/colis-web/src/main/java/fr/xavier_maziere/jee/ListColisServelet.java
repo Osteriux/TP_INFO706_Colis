@@ -22,6 +22,9 @@ public class ListColisServelet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String editer = request.getParameter("editer");
+        if(editer == null) {
+            editer = "0";
+        }
         
         List<Colis> listColis = ejb.getAllColis();
 

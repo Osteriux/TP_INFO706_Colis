@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +26,7 @@
 			<input type="number" id="latitude" name="latitude" step="0.0001" value="${colis.latitude}" required/>
 
 			<label for="emplacement">Emplacement:</label>
-			<input type="text" id="emplacement" name="emplacement" value="${colis.emplacement}" required/>
+			<input type="text" id="emplacement" name="emplacement" value="${colis.emplacement[colis.emplacement.size()-1]}" required/>
 
 			<label for="etat">Etat:</label>
 			<select id="etat" name="etat">

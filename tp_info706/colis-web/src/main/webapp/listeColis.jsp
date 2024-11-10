@@ -33,6 +33,9 @@
             <th>longitude</th>
             <th>latitude</th>
             <th>etat</th>
+            <c:if test="${editer == 1}">
+                <th>supprimer</th>
+            </c:if>
         </tr>
         <c:forEach var="colis" items="${colisList}">
             <tr class="colis">
@@ -47,10 +50,13 @@
                 <td>${colis.origine }</td>
                 <td>${colis.destination }</td>
                 <td>${colis.valeur }&euro;</td>
-                <td>${colis.emplacement }</td>
+                <td>${colis.emplacement[colis.emplacement.size()-1] }</td>
                 <td>${colis.longitude }</td>
                 <td>${colis.latitude }</td>
                 <td>${colis.etat }</td>
+                <c:if test="${editer == 1}">
+                    <td><a href="http://localhost:8080/colis-web/supprimerColis?id=${colis.id}">supprimer</a></td>
+                </c:if>
             </tr>
         </c:forEach>
 </body>
