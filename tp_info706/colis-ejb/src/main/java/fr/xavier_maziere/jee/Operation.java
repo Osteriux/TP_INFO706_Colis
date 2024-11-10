@@ -3,6 +3,9 @@ package fr.xavier_maziere.jee;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
+
+import java.util.List;
+
 import jakarta.transaction.Transactional;
 import jakarta.websocket.server.PathParam;
 import jakarta.ws.rs.DELETE;
@@ -26,6 +29,11 @@ public interface Operation {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("{id}")
     Colis getColis(@PathParam("id") long id);
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("all")
+    List<Colis> getAllColis();
 
     @PUT
     @Produces(MediaType.APPLICATION_JSON)

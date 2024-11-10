@@ -23,11 +23,11 @@ public class CreerColisServelet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         float poids = Float.parseFloat(request.getParameter("poids"));
-        String destination = request.getParameter("dest");
-        String origine = request.getParameter("orig");
-        float valeur = Float.parseFloat(request.getParameter("val"));
-        double longitude = Double.parseDouble(request.getParameter("long"));
-        double latitude = Double.parseDouble(request.getParameter("lat"));
+        String destination = request.getParameter("destination");
+        String origine = request.getParameter("origine");
+        float valeur = Float.parseFloat(request.getParameter("valeur"));
+        double longitude = Double.parseDouble(request.getParameter("longitude"));
+        double latitude = Double.parseDouble(request.getParameter("latitude"));
 
         // response.getWriter().println("poids : " + poids);
         // response.getWriter().println("destination : " + destination);

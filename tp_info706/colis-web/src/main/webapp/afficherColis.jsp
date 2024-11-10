@@ -9,18 +9,27 @@
 </head>
 <body>
 	<h1>Affichage Colis</h1>
+    <ul id="menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="ajoutColis.html">Enrgistrement</a></li>
+        <li><a href="http://localhost:8080/colis-web/listColis?editer=0">Progression</a></li>
+        <li><a href="http://localhost:8080/colis-web/listColis?editer=1">Suivi</a></li>
+    </ul>
 	<h2>Informations Colis :</h2>
-	<p>id : ${colis.id }</p>
-    <p>poids : ${colis.poids }</p>
-    <p>destination : ${colis.destination }</p>
-    <p>origine : ${colis.origine }</p>
-    <p>valeur : ${colis.valeur }&euro;</p>
-    <br/>
-    <p>emplacement : ${colis.emplacement }</p>
-    <p>longitute : ${colis.longitude }</p>
-    <p>latitude : ${colis.latitude }</p>
-    <p>etat : ${colis.etat }</p>
-
-	<a href="index.html">Revenir  la page principale</a>
+    <div id="infoColis">
+        <div>
+            <p>id : ${colis.id }</p>
+            <p>poids : ${colis.poids }</p>
+            <p>destination : ${colis.destination }</p>
+            <p>origine : ${colis.origine }</p>
+            <p>valeur : ${colis.valeur }&euro;</p>
+        </div>
+        <div>
+            <p>emplacement : ${colis.emplacement }</p>
+            <p>longitute : ${colis.longitude }</p>
+            <p>latitude : ${colis.latitude }</p>
+            <p>etat : ${colis.etat }</p>
+        </div>
+    </div>
 </body>
 </html>

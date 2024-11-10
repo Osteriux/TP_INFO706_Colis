@@ -1,0 +1,90 @@
+html {
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    flex-direction: row;
+    padding-bottom: 30px;
+}
+
+#menu li a {
+    text-decoration: none;
+    color: black;
+}
+
+#menu li a:hover {
+    color: blue;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 10px;
+    width: 50%;
+}
+
+form label {
+    text-align: right;
+    padding-right: 10px;
+}
+
+form input {
+    width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#infoColis {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+#infoColis div {
+    width: 15%;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}

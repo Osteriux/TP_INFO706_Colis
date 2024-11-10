@@ -1,5 +1,7 @@
 package fr.xavier_maziere.jee;
 
+import java.util.List;
+
 import jakarta.ejb.Remote;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
@@ -29,6 +31,11 @@ public class OperationBean implements Operation {
     }
 
     @Override
+    public List<Colis> getAllColis() {
+        return em.createQuery("SELECT c FROM Colis c", Colis.class).getResultList();
+    }
+
+    @Override
     public Colis updatePositionColis(long id, double longitude, double latitude, String emplacement, String etat) {
         Colis colis = getColis(id);
         colis.setLongitude(longitude);
@@ -43,5 +50,6 @@ public class OperationBean implements Operation {
         Colis colis = getColis(id);
         em.remove(colis);
     }
+
 
 }
